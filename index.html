@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="peeka">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>PeekabooCode</title>
+        
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css" media="all" />
+        
+    </head>
+    <body>
+        
+        <div ui-view></div>
+        <!-- We'll also add some navigation: -->
+        <a ui-sref="levelOne">State 1</a>
+        <a ui-sref="levelTwo">State 2</a>
+        
+        <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="app/app.js" type="text/javascript" charset="utf-8"></script>
+        
+    </body>
+</html>
