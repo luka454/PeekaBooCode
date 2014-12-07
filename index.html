@@ -8,6 +8,10 @@
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css" media="all" />
         <link rel="stylesheet" href="scripts/css/editor.css" type="text/css" media="all" />
         <link rel="stylesheet" href="scripts/css/navbar.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="scripts/css/levelOne.css" type="text/css" media="all" />
+        
+        <script src="bower_components/phaser/build/phaser.min.js" type="text/javascript" charset="utf-8"></script>
+       
     </head>
     <body>
     
@@ -16,10 +20,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
-                    <div ng-include="'views/editor.html'"></div>
+                   <div ui-view></div>
                 </div>
                 <div class="col-lg-6">
-                    <div ui-view></div>
+                    <div ng-include="'views/editor.html'"></div>
                 </div>
             </div>
         </div>
@@ -31,6 +35,7 @@
         <script src="app/app.js" type="text/javascript" charset="utf-8"></script>
         <script src="git_components/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
         <script src="scripts/js/editor.js" type="text/javascript" charset="utf-8"></script>
+       
         
     </body>
 </html>

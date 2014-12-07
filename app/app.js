@@ -44,13 +44,6 @@ peeka.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/levelOne.html",
       controller: "levelOneCtrl"
     })
-    .state('levelOne.list', {
-      url: "/list",
-      templateUrl: "views/levelOne.list.html",
-      controller: function($scope) {
-        $scope.items = ["A", "Set", "Of", "Things"];
-      }
-    })
     .state('levelTwo', {
       url: "/levelTwo",
       templateUrl: "views/levelTwo.html",
