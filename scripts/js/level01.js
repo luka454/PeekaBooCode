@@ -1,17 +1,23 @@
 
-var X = 450, Y=600;
+var X = 800, Y=600;
 
-var game = new Phaser.Game(X, Y, Phaser.AUTO, '', {preload: preload, create: create, update: update, render: render} );
+var game = new Phaser.Game(X, Y, Phaser.CANVAS, '', {preload: preload, create: create, update: update, render: render} );
 
 var floor1, floor2, platform1, counter = 0;
 
 var text;
 
-var ispravanUnos = false;
+var correctInput = false;
 
 var player, upKey, downKey, leftKey, rightKey;
 
 function preload() {
+
+	game.scale.maxWidth = X;
+    game.scale.maxHeight = Y;
+
+	game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+	game.scale.setScreenSize();
 
 	game.load.image('eko', 'pictures/ekoX.jpg');
 	game.load.image('floor', 'textures/Walls01.jpg');
@@ -30,17 +36,17 @@ function create() {
 	game.physics.arcade.gravity.y = 300;
 
 
-    text = game.add.text(8*X/9, Y/30, "i="+counter, { font: "40px Verdana", fill: "#4AE057", align: "center" });
+    text = game.add.text(9*X/10, Y/15, "i="+counter, { font: "40px Verdana", fill: "#4AE057", align: "center" });
     text.anchor.set(0.5);
 
-	floor1 = game.add.sprite(0, X, 'floor');
+	floor1 = game.add.sprite(0, Y/60*39, 'floor');
 	floor1.width = X/9;
 	floor1.height = Y/30;
 	game.physics.arcade.enable([floor1]);
 	floor1.body.allowGravity = false;
 	floor1.body.immovable = true;
 
-	floor2 = game.add.sprite(8*X/9, X, 'floor');
+	floor2 = game.add.sprite(8*X/9, Y/60*39, 'floor');
 	floor2.width = X/9;
 	floor2.height = Y/30;
 	game.physics.arcade.enable([floor2]);
@@ -54,20 +60,23 @@ function create() {
 	platform1.body.allowGravity = false;
 	platform1.body.immovable = true;
 
-	player = game.add.sprite(20, 20, 'player');
-	game.physics.arcade.enable([player]);	
+	player = game.add.sprite(X/20, Y/10, 'player');
+	game.physics.arcade.enable([player]);
+	player.anchor.setTo(0.5, 0.5);
+	player.width=50;
+	player.height=50;
 }
 
 function update() {
 
 game.physics.arcade.collide(player, [floor1, floor2, platform1]);
 
-if (upKey.isDown) player.y-=2;
+if (upKey.isDown) player.y-=3;
 if (downKey.isDown) player.y+=2;
 if (leftKey.isDown) player.x-=2;
 if (rightKey.isDown) player.x+=2;
 
-if(ispravanUnos) game.physics.arcade.collide([floor1, floor2, platform1], zeleni, collisionHandler, null, this);
+if(correctInput) game.physics.arcade.collide([floor1, floor2, platform1], green, collisionHandler, null, this);
 
 }
 
@@ -78,29 +87,29 @@ function render() {
 function collisionHandler() {
 
 	game.add.tween(platform1).to({ y: platform1.y + Y/10 }, 750, Phaser.Easing.Linear.None, true);
-	zeleni.destroy();
+	green.destroy();
 	counter--;
 	text.setText("i="+counter);
 
-	if(counter>0) kreirajZeleni();
+	if(counter>0) createGreen();
 }
 
-function kreirajZeleni() {
+function createGreen() {
 
-	zeleni = game.add.sprite(X/2-Y/60, Y/30, 'eko');
-	zeleni.width=Y/30;
-	zeleni.height=Y/30;
-	game.physics.arcade.enable([zeleni]);
-	zeleni.body.allowGravity = false;
-	zeleni.body.velocity.y = 100;
-	zeleni.body.bounce.set(0);
+	green = game.add.sprite(X/2-Y/60, Y/30, 'eko');
+	green.width=Y/30;
+	green.height=Y/30;
+	game.physics.arcade.enable([green]);
+	green.body.allowGravity = false;
+	green.body.velocity.y = 100;
+	green.body.bounce.set(0);
 
-	ispravanUnos = true;
+	correctInput = true;
 }
 
-function unos() {
+function input() {
 
 	counter = 5;
 	text.setText("i="+counter);
-	kreirajZeleni();
+	createGreen();
 }

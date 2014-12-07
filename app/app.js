@@ -32,6 +32,7 @@ peeka.controller('levelOneCtrl', function($scope){
         else
         return null;
       });
+      }
 
     this.addBoxes = (function(){
        unirest.post('https://ideas2it-hackerearth.p.mashape.com/compile/')
@@ -53,8 +54,8 @@ peeka.controller('levelOneCtrl', function($scope){
         else
         return null;
     });
-         
-});
+         }
+}
 
 peeka.controller('levelTwoCtrl', function($scope){
    
@@ -71,13 +72,6 @@ peeka.config(function($stateProvider, $urlRouterProvider) {
       url: "/levelOne",
       templateUrl: "views/levelOne.html",
       controller: "levelOneCtrl"
-    })
-    .state('levelOne.list', {
-      url: "/list",
-      templateUrl: "views/levelOne.list.html",
-      controller: function($scope) {
-        $scope.items = ["A", "Set", "Of", "Things"];
-      }
     })
     .state('levelTwo', {
       url: "/levelTwo",
