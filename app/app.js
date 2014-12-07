@@ -21,7 +21,7 @@ peeka.controller('editorCtrl', function($scope){
         else
         return null;
       });
-    this.
+    
 });
 
 peeka.controller('levelOneCtrl', function($scope){
