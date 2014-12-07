@@ -32,6 +32,10 @@ peeka.controller('levelTwoCtrl', function($scope){
    
 });
 
+peeka.controller('levelThreeCtrl', function($scope){
+   
+});
+
 peeka.config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /levelOne
@@ -49,11 +53,9 @@ peeka.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/levelTwo.html",
       controller: "levelTwoCtrl"
     })
-    .state('levelTwo.list', {
-      url: "/list",
-      templateUrl: "views/levelTwo.list.html",
-      controller: function($scope) {
-        $scope.things = ["A", "Set", "Of", "Things"];
-      }
-    });
+    .state('levelThree', {
+      url: "/levelThree",
+      templateUrl: "views/levelThree.html",
+      controller: "levelThreeCtrl"
+    })
 });

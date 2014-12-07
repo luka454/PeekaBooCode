@@ -25,10 +25,10 @@ function preload() {
     leftKey = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
     rightKey = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 
-	game.load.image('green', 'pictures/ekoX.jpg');
-	game.load.image('blue', 'pictures/Ammo1B38AB.jpg');
-	game.load.image('floor', 'textures/Walls01.jpg');
-	game.load.image('player', 'player/Player.jpg');
+	game.load.image('green', 'images/lvl1.jpg');
+	game.load.image('blue', 'images/lvl3.jpg');
+	game.load.image('floor', 'images/lvl2.jpg');
+	game.load.image('player', 'images/level2pic.png');
 }
 
 function create() {
