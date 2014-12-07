@@ -1,7 +1,7 @@
 
 var X = 800, Y=600;
 
-var game = new Phaser.Game(X, Y, Phaser.CANVAS, '', {preload: preload, create: create, update: update, render: render} );
+var game = new Phaser.Game(X, Y, Phaser.CANVAS, 'game1', {preload: preload, create: create, update: update, render: render} );
 
 var floor1, floor2, platform1, counter = 0;
 
