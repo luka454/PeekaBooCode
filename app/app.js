@@ -1,12 +1,11 @@
- var peeka = angular.module('peeka', ["ui.router"])
+var peeka = angular.module('peeka', ["ui.router"]);
 
 peeka.controller('editorCtrl', function($scope){
     
     this.preCode = "int i = 0; int i = 1;";
     this.codeTxt = "";
     this.output = "";
-    this.compiler = (function(c)
-      {
+    this.compiler = (function(c){
         codeTxt = c;
         unirest.post('https://ideas2it-hackerearth.p.mashape.com/compile/')
         .headers({ "X-Mashape-Key": "SE3c7iMEE8mshWarFBV6EqgmXjDDp19YotPjsnAJmpppoKJu0L", "Content-Type": "application/x-www-form-urlencoded" })
@@ -20,8 +19,9 @@ peeka.controller('editorCtrl', function($scope){
          }  
         else
         return null;
+        });
       });
-    
+      
 });
 
 peeka.controller('levelOneCtrl', function($scope){
