@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html ng-app="peeka">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -7,20 +6,31 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" type="text/css" media="all" />
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="all" />
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css" media="all" />
-        
+        <link rel="stylesheet" href="scripts/css/editor.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="scripts/css/navbar.css" type="text/css" media="all" />
     </head>
     <body>
+    
+        <div ng-include="'views/partialViewNavbar.html'"></div>
         
-        <div ui-view></div>
-        <!-- We'll also add some navigation: -->
-        <a ui-sref="levelOne">State 1</a>
-        <a ui-sref="levelTwo">State 2</a>
-        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div ng-include="'views/editor.html'"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div ui-view></div>
+                </div>
+            </div>
+        </div>
+       
         <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="app/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="git_components/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="scripts/js/editor.js" type="text/javascript" charset="utf-8"></script>
         
     </body>
 </html>
