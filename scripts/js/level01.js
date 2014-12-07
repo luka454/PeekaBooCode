@@ -19,9 +19,9 @@ function preload() {
 	game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	game.scale.setScreenSize();
 
-	game.load.image('eko', 'pictures/ekoX.jpg');
-	game.load.image('floor', 'textures/Walls01.jpg');
-	game.load.image('player', 'player/player.jpg');
+	game.load.image('eko', 'images/lvl2.jpg');
+	game.load.image('floor', 'images/lvl3.jpg');
+	game.load.image('player', 'images/level3pic.png');
 
 	upKey = game.input.keyboard.addKey(Phaser.Keyboard.UP);
     downKey = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
