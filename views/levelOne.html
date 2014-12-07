@@ -1,6 +1,20 @@
 <!-- views/levelOne.html -->
-<h1>Level 1</h1>
-<hr />
-<div id="game" onclick="unos()">
-  <script src="scripts/js/level01.js" type="text/javascript" charset="utf-8"></script>
-</div>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Level 1</title>
+        <script src="scripts/level01.js"></script>
+    </head>
+    <body>
+    <button onclick="increase()"> Increase the numberOfBoxes here! </button>
+    <script >
+    function increase(){
+    	unos();
+    	addBoxes();
+    }
+
+   	</script>
+
+
+    </body>
+</html>
