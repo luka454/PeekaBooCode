@@ -1,7 +1,7 @@
 
 var X = 800, Y=600;
 
-var game = new Phaser.Game(X, Y, Phaser.CANVAS, '', {preload: preload, create: create, update: update, render: render} );
+var game = new Phaser.Game(X, Y, Phaser.CANVAS, 'game2', {preload: preload, create: create, update: update, render: render} );
 
 var floor1, floor2, platform1, platform2, counterGreen = 0, counterBlue=0;
 
@@ -25,10 +25,10 @@ function preload() {
     leftKey = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
     rightKey = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
 
-	game.load.image('green', 'pictures/ekoX.jpg');
-	game.load.image('blue', 'pictures/Ammo1B38AB.jpg');
-	game.load.image('floor', 'textures/Walls01.jpg');
-	game.load.image('player', 'player/Player.jpg');
+	game.load.image('green', 'images/lvl1.jpg');
+	game.load.image('blue', 'images/lvl3.jpg');
+	game.load.image('floor', 'images/lvl2.jpg');
+	game.load.image('player', 'images/level2pic.png');
 }
 
 function create() {

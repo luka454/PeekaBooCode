@@ -1,7 +1,7 @@
 
 var X = 800, Y=600;
 
-var game = new Phaser.Game(X, Y, Phaser.CANVAS, '', {preload: preload, create: create, update: update, render: render} );
+var game = new Phaser.Game(X, Y, Phaser.CANVAS, 'game3', {preload: preload, create: create, update: update, render: render} );
 
 var floor1, floor2, platform1, platform2, counterGreen = 0, counterBlue=0, counterRed_p=0, counterRed_q=0;
 
@@ -20,12 +20,12 @@ function preload() {
 	game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 	game.scale.setScreenSize();
 
-	game.load.image('green', 'pictures/ekoX.jpg');
-	game.load.image('blue', 'pictures/Ammo1B38AB.jpg');
-	game.load.image('red_p', 'pictures/AmmoF20000.jpg');
-	game.load.image('red_q', 'pictures/AmmoF20000.jpg');
-	game.load.image('floor', 'textures/Walls01.jpg');
-	game.load.image('player', 'player/player.jpg');
+	game.load.image('green', 'images/lvl2.jpg');
+	game.load.image('blue', 'images/lvl1.jpg');
+	game.load.image('red_p', 'images/lvl3.jpg');
+	game.load.image('red_q', 'images/lvl1.jpg');
+	game.load.image('floor', 'images/lvl2.jpg');
+	game.load.image('player', 'images/level1pic.png');
 
 	upKey = game.input.keyboard.addKey(Phaser.Keyboard.UP);
     downKey = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
