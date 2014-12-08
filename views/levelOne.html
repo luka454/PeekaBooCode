@@ -9,12 +9,35 @@
     <button onclick="increase()"> Increase the numberOfBoxes here! </button>
     <script >
     function increase(){
-    	unos();
     	addBoxes();
+        input(parseInt(output));
+         var editor = document.getElementById("editor");
+                var e = editor.env.editor;
+         e.setValue(HtmlCode);
     }
 
    	</script>
+    <h1>  Or, if you want, you can add command in C++:  </h1>
+<input id="userCode" type="text" onchange="addCode"></input>
 
+<script>  function addCode()
+{
+    var userCode = document.getElementById("userCode");
+   
+    var editor = document.getElementById("editor");
+            var e = editor.env.editor;
+        e.setValue(preCode + '\n' + userCode.innerHtml);
+
+   if(compiler(userCode.innerHtml) != null)
+        {
+        input(parseInt(output));
+            var editor = document.getElementById("editor");
+                var e = editor.env.editor;
+            e.setValue(htmlCode);
+        };
+
+}  
+</script>
 
     </body>
 </html>

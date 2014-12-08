@@ -7,6 +7,10 @@ var floor1, floor2, platform1, counter = 0;
 
 var text;
 
+var numberOfBoxes = 0;
+
+bool boxFalling = false;
+
 var correctInput = false;
 
 var player, upKey, downKey, leftKey, rightKey;
@@ -76,6 +80,12 @@ if (downKey.isDown) player.y+=2;
 if (leftKey.isDown) player.x-=2;
 if (rightKey.isDown) player.x+=2;
 
+if(!boxFalling && counter > 0)
+{
+	createGreen();
+	counter--;
+}
+
 if(correctInput) game.physics.arcade.collide([floor1, floor2, platform1], green, collisionHandler, null, this);
 
 }
@@ -88,6 +98,7 @@ function collisionHandler() {
 
 	game.add.tween(platform1).to({ y: platform1.y + Y/10 }, 750, Phaser.Easing.Linear.None, true);
 	green.destroy();
+	boxFalling = false;
 	counter--;
 	text.setText("i="+counter);
 
@@ -95,7 +106,7 @@ function collisionHandler() {
 }
 
 function createGreen() {
-
+	boxFalling = true;
 	green = game.add.sprite(X/2-Y/60, Y/30, 'eko');
 	green.width=Y/30;
 	green.height=Y/30;
@@ -107,9 +118,9 @@ function createGreen() {
 	correctInput = true;
 }
 
-function input() {
+function input(i) {
 
-	counter = 5;
-	text.setText("i="+counter);
-	createGreen();
+	counter = i - numberOfBoxes;
+	numberOfBoxes += i - numberOfBoxes;
+	text.setText("numberOfBoxes = "+counter);
 }
