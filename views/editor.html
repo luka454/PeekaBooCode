@@ -1,8 +1,14 @@
 <h1>Editor</h1>
 <hr />
 <div id="editor">
-int i = 0;
-i++;
+//This is the way how 'comments' look like in C++ 
+
+int numberOfBoxes = 0; 
+
+//It seems that integer numberOfBoxes has run out of boxes!!!
+// We should do something about it and at the same time PeekaBoo Yellow HAS 
+//to be on the other side of the world!
+
 </div>
 <div class="sep">
     <div class="btn btn-primary" onClick="KlikFunckija(this)">int i = 5;</div>
@@ -12,11 +18,10 @@ i++;
 
 <script type="text/javascript">
         function KlikFunckija(dugme){
-                var editor = document.getElementById("editor");
-                var e = editor.env.editor;
-                var currentCode = e.getValue();
-                e.setValue(currentCode + "\n" + dugme.innerHTML+ "\n", -1);
-                alert(this.editor);
+            var editor = document.getElementById("editor");
+            var e = editor.env.editor;
+            var currentCode = e.getValue();
+            e.setValue(currentCode + "\n" + dugme.innerHTML+ "\n", -1);
         }
 </script>
   
@@ -24,5 +29,6 @@ i++;
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.setReadOnly(true);
-    editor.getSession().setMode("ace/mode/javascript");
+    editor.getSession().setMode("ace/mode/c_cpp");
+    
 </script>

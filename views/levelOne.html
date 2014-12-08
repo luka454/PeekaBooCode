@@ -1,32 +1,59 @@
 <!-- views/levelOne.html -->
-<<<<<<< HEAD
+
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Level 1</title>
-        <script src="scripts/level01.js"></script>
+       
     </head>
     <body>
-    <button onclick="increase()"> Increase the numberOfBoxes here! </button>
-    <script >
-    function increase(){
-    	unos();
-    	addBoxes();
-    }
-
-   	</script>
-
-
+        <button onclick="increase()"> Increase the numberOfBoxes here! </button>
+        <script>
+        function increase(){
+        	var c = controller;
+        	
+        	c.addBoxes();
+            input(parseInt(output));
+            
+            var editor = document.getElementById("editor");
+            var e = editor.env.editor;
+            
+            e.setValue(HtmlCode);
+        }
+    
+       	</script>
+        <h3>  Or, if you want, you can add command in C++:  </h3>
+        <input id="userCode" type="text" onchange="addCode"/>
+        
+        <script>  function addCode()
+        {
+            var userCode = document.getElementById("userCode");
+           
+            var editor = document.getElementById("editor");
+            var e = editor.env.editor;
+            
+            e.setValue(preCode + '\n' + userCode.innerHtml);
+        
+            if(compiler(userCode.innerHtml) != null)
+            {
+            input(parseInt(output));
+                var editor = document.getElementById("editor");
+                    var e = editor.env.editor;
+                e.setValue(htmlCode);
+            };
+        }  
+        </script>
+        
+        <div class="animate-show">
+            
+            <h1>Level 1</h1>
+            <hr />
+            
+            <div id="game1">
+              <script src="scripts/js/level01.js" type="text/javascript" charset="utf-8"></script>
+            </div>
+            
+        </div>
     </body>
 </html>
-=======
-<div class="animate-show">
-    
-<h1>Level 1</h1>
-<hr />
-<div id="game1" onclick="input()">
-  <script src="scripts/js/level01.js" type="text/javascript" charset="utf-8"></script>
-</div>
 
-</div>
->>>>>>> 98f977edabaae806bb1526fd5be80051a33f934e
